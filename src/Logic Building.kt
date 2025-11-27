@@ -89,5 +89,4 @@ fun nthTermFromFirstTwoterms(a1: Int,a2: Int,n: Int): Int{
 
     return (a1 +(n-1)* (a2-a1))
 
-
 }
