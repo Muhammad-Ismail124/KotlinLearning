@@ -1,4 +1,3 @@
-import kotlin.math.pow
 import kotlin.math.sqrt
 
 fun evenOrOdd(n:Int){
@@ -155,4 +154,14 @@ fun calculatePie(){
     println("Pie is the division of 22/7")
     val pie: Double = 22.0/7.0
     println("So the value of pie is $pie")
+}
+
+fun validTraingle(a: Int, b: Int, c: Int){
+
+    if (a + b > c && a + c > b && b + c > a){
+        println("Valid Triangle")
+    } else {
+        println("Invalid Triangle")
+    }
+
 }
