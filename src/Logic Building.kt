@@ -305,49 +305,58 @@ fun toThePowerOf() {
 
 //----------------------------------------------------------------------------------------------------------------------
 
-fun arrayActions() {
+fun arrayActions2() {
 
     println("Enter Numbers one by one And Type 'done' to finish ")
-
     var myArray = intArrayOf()
+    var sum = 0
 
     while (true) {
+        val input = readln()    // reads the input and saves it
+        val number = input.toIntOrNull()
 
-        val input = readln()
+        if (number != null) {
+
+            myArray += number
+
+        } else {
+            println("Please A valid number or 'done' to finish")
+        }
 
         if (input == "Done" || input == "done") {
 
             break
         }
-        val number = input.toIntOrNull()
-
-        if (number != null) {
-            myArray += number
-        } else {
-            println("Please A valid number or 'done' to finish")
-        }
     }
+
     println("The Array Contents Are : ${myArray.joinToString(", ")}")
-
-    println("Enter An Action: Reverse Or Start Or sum to perform action on Array: ")
-
+    println("Enter An Action: Reverse Or Print Or Sum Or Max to perform action on Array: ")
     val answer = readlnOrNull().toString()
 
-    var size = myArray.size - 1
+
+    if (answer == "max"|| answer == "Max"){
+    var max = myArray[0]
+       for (sorting in myArray){
+           if(sorting > max){
+               max = sorting
+           }
+       }
+        println("Max Content in Array is: $max")
+    }
+
+
 
     if (answer == "Reverse" || answer == "reverse") {
-
         print("Reverse: ${myArray.reversed().joinToString(", ")}")
     }
 
 
-    if (answer == "start" || answer == "Start") {
 
+    if (answer == "print" || answer == "Print") {
         print("From The Start The Array Has: ${myArray.joinToString(", ")}")
 
     }
 
-    var sum = 0
 
     if (answer == "sum" || answer == "Sum") {
         for (i in myArray) {
@@ -360,15 +369,33 @@ fun arrayActions() {
 }
 //----------------------------------------------------------------------------------------------------------------------
 
+fun averageArray(){
+    println("Enter 5 Numbers: ")
 
-/*
-simple expression = 3 > 4 || 4 > 3 && 4 <= 4
-x = 9     ,   y = 3     ,     z= 9
-hard Expression = !(x != z) && bool || z > (x + y) && (!bool || y > z)
-                  !(false) && true || 9 > (9+3) && (!true || 3 > 9)
-! = converts into false into true or true into false
-                  true && true || 9 > 12 -> false && (false || false)
-                  true || false && false
-                  true || false
-                  -> True
- */
+    var numbers = intArrayOf()
+    var count = 1
+
+    while (numbers.size < 5){
+        println("Number $count: ")
+        val input = readln().trim()
+        val number = input.toIntOrNull()
+
+        if (number == null){
+            println("Please enter a valid number: ")
+            continue
+        }
+
+        numbers += number
+        count++
+
+    }
+
+    val sum = numbers.sum()
+    val average = numbers.average()
+
+    println("You Entered ${numbers.joinToString(", ")}")
+    println("Sum: $sum")
+    println("Average: $average")
+}
+
+
