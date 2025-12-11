@@ -358,6 +358,7 @@ fun arrayActions2() {
     }
 
 
+
     if (answer == "sum" || answer == "Sum") {
         for (i in myArray) {
             sum += i

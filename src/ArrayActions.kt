@@ -51,5 +51,6 @@ fun performAction(action: String,array:IntArray) {
         }
 
         else -> println("Unknown action")
+
     }
 }
