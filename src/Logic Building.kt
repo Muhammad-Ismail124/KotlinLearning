@@ -402,3 +402,48 @@ fun averageArray(){
 //----------------------------------------------------------------------------------------------------------------------
 
 
+fun easyHomeWork() {
+
+    println("Enter 5 Numbers:")
+    val list = mutableListOf<Int>()
+    for (i in 1..5) {
+        val x = readln()?.toInt()
+        if (x != null) {
+            list.add(x)
+        }
+    }
+println("${list.reversed()}")
+
+
+}
+fun fibonacciSeriesInList (){
+val list = mutableListOf<Int>()
+println("Enter a number n > 1: ")
+    val x = readln().toIntOrNull()
+    var a = 0
+    var b = 1
+    var temp = 0
+    if (x != null){
+        for (i in 1..x){
+            list.add(a)
+            temp = a+b
+            b = a
+            a = temp
+        }
+    }
+println(list)
+}
+
+fun askCountry() {
+
+    print("Where are you from? ")
+    val country = readln().trim().lowercase()
+
+    when (country) {
+        "india" -> println("Namaste")
+        "usa" -> println("Hello")
+        "germany" -> println("Hallo")
+        "russia" -> println("Privet")
+        else -> println("I don't know that country")
+    }
+}
